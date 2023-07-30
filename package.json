@@ -1,0 +1,25 @@
+{
+  "name": "apibinance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awancloudz/APIBinance.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/awancloudz/APIBinance/issues"
+  },
+  "homepage": "https://github.com/awancloudz/APIBinance#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-binance-api": "^0.13.1",
+    "nodemon": "^3.0.1"
+  }
+}
