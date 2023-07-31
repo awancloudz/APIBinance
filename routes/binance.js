@@ -10,5 +10,6 @@ router.get('/', (req, res)=>{
 router.get('/balance', BinanceController.getBalance);
 router.get('/position', BinanceController.getPosition);
 router.get('/tradelist', BinanceController.getTradelist);
+router.post('/posttrade', BinanceController.postTrade);
 
 module.exports = router;

@@ -51,8 +51,33 @@ const getTradelist = async (req, res)=>{
     }
 }
 
+const postTrade = async (req, res)=>{
+	const {body} = req;
+	const amount = body.amount;
+	const action = body.action;
+    try {
+		if(action === "buy"){
+			var opentrade = await binance.futuresMarketBuy('1000PEPEUSDT', amount);	
+		}
+		else if(action === "sell"){
+			var opentrade = await binance.futuresMarketSell('1000PEPEUSDT', amount);	
+		}
+		console.log(action);
+        res.status(201).json({
+            message:"Trade!",
+            data: opentrade,
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: "Server Error!",
+            serverMessage: error,
+        })
+    }
+}
+
 module.exports = {
     getBalance,
     getPosition,
     getTradelist,
+	postTrade,
 };
