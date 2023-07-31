@@ -13,3 +13,5 @@ app.use('/account', binanceRoutes);
 app.listen(PORT, ()=>{
     console.log(`Server runing di port ${PORT}`);
 });
+
+module.exports = app
