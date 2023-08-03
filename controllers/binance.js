@@ -77,12 +77,14 @@ const postTrade = async (req, res)=>{
 		else if(action === "sell"){
 			var opentrade = await binance.futuresMarketSell('1000PEPEUSDT', amount);	
 		}
+        console.log("Request Sent!");
 		console.log(opentrade);
         res.status(201).json({
-            message:"Trade!",
+            message:"Request Sent!",
             data: opentrade,
         });
     } catch (error) {
+        console.log("Server Error!");
         console.log(error);
         res.status(500).json({
             message: "Server Error!",
