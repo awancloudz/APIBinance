@@ -83,6 +83,7 @@ const postTrade = async (req, res)=>{
             data: opentrade,
         });
     } catch (error) {
+        console.log(error);
         res.status(500).json({
             message: "Server Error!",
             serverMessage: error,
