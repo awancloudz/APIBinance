@@ -2,6 +2,8 @@ const Binance = require('node-binance-api');
 const binance = new Binance().options({
   APIKEY: process.env.APIKEY,
   APISECRET: process.env.SECKEY,
+  useServerTime: true,
+  recvWindow: 60000,
 });
 
 const getServertime = async (req, res)=>{
