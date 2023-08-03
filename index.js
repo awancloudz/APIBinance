@@ -1,4 +1,4 @@
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 80;
 const express = require('express');
 const binanceRoutes = require('./routes/binance');
 const app = express();

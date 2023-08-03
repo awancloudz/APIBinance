@@ -53,7 +53,7 @@ const getTradelist = async (req, res)=>{
 
 const postTrade = async (req, res)=>{
 	const {body} = req;
-	const amount = body.amount;
+	const amount = parseInt(body.amount);
 	const action = body.action;
     try {
 		if(action === "buy"){
@@ -62,7 +62,7 @@ const postTrade = async (req, res)=>{
 		else if(action === "sell"){
 			var opentrade = await binance.futuresMarketSell('1000PEPEUSDT', amount);	
 		}
-		console.log(action);
+		console.log(opentrade);
         res.status(201).json({
             message:"Trade!",
             data: opentrade,
