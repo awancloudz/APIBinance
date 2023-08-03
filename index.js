@@ -1,3 +1,4 @@
+require('dotenv').config()
 const PORT = process.env.PORT || 80;
 const express = require('express');
 const binanceRoutes = require('./routes/binance');

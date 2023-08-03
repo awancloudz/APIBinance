@@ -7,6 +7,7 @@ router.get('/', (req, res)=>{
         message: "Welcome!"
     })
 });
+router.get('/servertime', BinanceController.getServertime);
 router.get('/balance', BinanceController.getBalance);
 router.get('/position', BinanceController.getPosition);
 router.get('/tradelist', BinanceController.getTradelist);

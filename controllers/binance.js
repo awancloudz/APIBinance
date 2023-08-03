@@ -1,8 +1,23 @@
 const Binance = require('node-binance-api');
 const binance = new Binance().options({
-  APIKEY: 'NWLg2nhUBSXD5XYAq9AXySqXhXrICKxjf9RrZ2suKVVLkya4jYJYrIjjyjfpbuWk',
-  APISECRET: '2YVYOZRqkyGUDmCbxi5KuZA7EUEYJMyXQkzzmzGde7qYyxKMfMQ98NhlJBej1Vmi'
+  APIKEY: process.env.APIKEY,
+  APISECRET: process.env.SECKEY,
 });
+
+const getServertime = async (req, res)=>{
+    try {
+        const data = await binance.futuresTime();
+        res.json({
+            message:"GET Server Time!",
+            data: data
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: "Server Error!",
+            serverMessage: error,
+        })
+    }
+}
 
 const getBalance = async (req, res)=>{
     try {
@@ -80,4 +95,5 @@ module.exports = {
     getPosition,
     getTradelist,
 	postTrade,
+    getServertime,
 };
