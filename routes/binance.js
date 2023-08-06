@@ -11,27 +11,27 @@ router.get('/', (req, res)=>{
 });
 
 //AWAN
-router.get('/servertime', BinanceController.getServertime);
-router.get('/balance', BinanceController.getBalance);
-router.get('/position', BinanceController.getPosition);
-router.get('/tradelist', BinanceController.getTradelist);
-router.post('/posttrade', BinanceController.postTrade);
-router.post('/postreduce', BinanceController.postReduce);
+router.get('/awan/servertime', BinanceController.getServertime);
+router.get('/awan/balance', BinanceController.getBalance);
+router.get('/awan/position', BinanceController.getPosition);
+router.get('/awan/tradelist', BinanceController.getTradelist);
+router.post('/awan/posttrade', BinanceController.postTrade);
+router.post('/awan/postreduce', BinanceController.postReduce);
 
 //ARIF
-router.get('/servertimearif', BinanceArifController.getServertime);
-router.get('/balancearif', BinanceArifController.getBalance);
-router.get('/positionarif', BinanceArifController.getPosition);
-router.get('/tradelistarif', BinanceArifController.getTradelist);
-router.post('/posttradearif', BinanceArifController.postTrade);
-router.post('/postreducearif', BinanceArifController.postReduce);
+router.get('/arif/servertime', BinanceArifController.getServertime);
+router.get('/arif/balance', BinanceArifController.getBalance);
+router.get('/arif/position', BinanceArifController.getPosition);
+router.get('/arif/tradelist', BinanceArifController.getTradelist);
+router.post('/arif/posttrade', BinanceArifController.postTrade);
+router.post('/arif/postreduce', BinanceArifController.postReduce);
 
 //MA
-router.get('/servertimema', BinanceMAController.getServertime);
-router.get('/balancema', BinanceMAController.getBalance);
-router.get('/positionma', BinanceMAController.getPosition);
-router.get('/tradelistma', BinanceMAController.getTradelist);
-router.post('/posttradema', BinanceMAController.postTrade);
-router.post('/postreducema', BinanceMAController.postReduce);
+router.get('/ma/servertime', BinanceMAController.getServertime);
+router.get('/ma/balance', BinanceMAController.getBalance);
+router.get('/ma/position', BinanceMAController.getPosition);
+router.get('/ma/tradelist', BinanceMAController.getTradelist);
+router.post('/ma/posttrade', BinanceMAController.postTrade);
+router.post('/ma/postreduce', BinanceMAController.postReduce);
 
 module.exports = router;
