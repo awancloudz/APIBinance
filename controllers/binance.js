@@ -94,10 +94,38 @@ const postTrade = async (req, res)=>{
     }
 }
 
+const postReduce = async (req, res)=>{
+	const {body} = req;
+	const amount = parseInt(body.amount);
+	const action = body.action;
+    try {
+		if(action === "buy"){
+			var opentrade = await binance.futuresMarketBuy('1000PEPEUSDT', amount, {reduceOnly: true});	
+		}
+		else if(action === "sell"){
+			var opentrade = await binance.futuresMarketSell('1000PEPEUSDT', amount, {reduceOnly: true});	
+		}
+        console.log("Request Sent!");
+		console.log(opentrade);
+        res.status(201).json({
+            message:"Request Sent!",
+            data: opentrade,
+        });
+    } catch (error) {
+        console.log("Server Error!");
+        console.log(error);
+        res.status(500).json({
+            message: "Server Error!",
+            serverMessage: error,
+        })
+    }
+}
+
 module.exports = {
     getBalance,
     getPosition,
     getTradelist,
 	postTrade,
     getServertime,
+    postReduce,
 };

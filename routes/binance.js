@@ -12,5 +12,6 @@ router.get('/balance', BinanceController.getBalance);
 router.get('/position', BinanceController.getPosition);
 router.get('/tradelist', BinanceController.getTradelist);
 router.post('/posttrade', BinanceController.postTrade);
+router.post('/postreduce', BinanceController.postReduce);
 
 module.exports = router;
